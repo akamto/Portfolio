@@ -1,8 +1,3 @@
-/* =====================================================
-   PORTAFOLIO AKRAM AMGHIBECH - script.js
-   Solo JavaScript puro (Vanilla JS), sin librerías.
-   ===================================================== */
-
 // Esperar a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();       // 1. Modo oscuro / claro
@@ -91,7 +86,7 @@ function initMobileMenu() {
   const toggle = document.getElementById('nav-toggle');
   const menu = document.getElementById('nav-menu');
   const overlay = document.getElementById('nav-overlay');
-  const noop = () => {};
+  const noop = () => { };
   if (!toggle || !menu) return noop;
 
   const isMobile = () => window.innerWidth <= 860;

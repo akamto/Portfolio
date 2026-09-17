@@ -1,13 +1,4 @@
-/* =====================================================
-   PORTAFOLIO AKRAM AMGHIBECH - sw.js
-   Service Worker nativo (sin librerías): portfolio
-   offline-first, seguro para subruta /Portfolio/.
-   ===================================================== */
-
-var CACHE = 'portfolio-v2';
-// IMPORTANTE: sube la versión (v1, v2...) cada vez que cambies
-// index.html, style.css, script.js o iconos, para que Pages
-// invalide la caché vieja en los visitantes recurrentes.
+var CACHE = 'portfolio-v1';
 
 // Rutas relativas al scope (./ = /Portfolio/ en Pages).
 // Solo lo crítico para abrir sin conexión. El PDF (92 KB) NO va
