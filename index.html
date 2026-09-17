@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <!-- Metadatos básicos y SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Akram Amghibech, técnico SMR en Bilbao. Administración de sistemas Windows y Linux, redes Cisco. Busco prácticas en Bilbao y alrededores." />
+  <meta name="author" content="Akram Amghibech" />
+  <meta name="robots" content="index, follow" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b4fa4" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220" />
+  <link rel="canonical" href="https://akamto.github.io/Portfolio/" />
+
+  <!-- Open Graph para compartir en LinkedIn y redes -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Portfolio Akram Amghibech" />
+  <meta property="og:url" content="https://akamto.github.io/Portfolio/" />
+  <meta property="og:title" content="Akram Amghibech | Administración de Sistemas y Redes — Prácticas en Bilbao" />
+  <meta property="og:description" content="Estudiante de SMR: servidores Windows y Linux y redes Cisco. Busco prácticas en Bilbao y alrededores." />
+  <meta property="og:image" content="https://akamto.github.io/Portfolio/assets/og-cover.png" />
+  <meta property="og:image:alt" content="Portfolio de Akram Amghibech, técnico SMR en Bilbao" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Akram Amghibech | Administración de Sistemas y Redes" />
+  <meta name="twitter:description" content="SMR en Bilbao: sistemas y redes. Busco prácticas." />
+  <meta name="twitter:image" content="https://akamto.github.io/Portfolio/assets/og-cover.png" />
+  <meta name="twitter:image:alt" content="Portfolio de Akram Amghibech, técnico SMR en Bilbao" />
+
+  <title>Akram Amghibech | Administración de Sistemas y Redes — Prácticas en Bilbao</title>
+
+  <!-- Evita flash de tema: aplica el tema guardado antes de pintar -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) { /* modo privado: se queda en light */ }
+    })();
+  </script>
+
+  <!-- Datos estructurados para Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Akram Amghibech",
+    "jobTitle": "Técnico en Sistemas Microinformáticos y Redes",
+    "address": { "@type": "PostalAddress", "addressLocality": "Bilbao", "addressCountry": "ES" },
+    "email": "akram.amghibech@ikasle.eus",
+    "url": "https://akamto.github.io/Portfolio/",
+    "sameAs": [
+      "https://github.com/akamto",
+      "https://www.linkedin.com/in/akram-amghibech-tohami-880716360/"
+    ],
+    "knowsAbout": ["Windows Server", "Linux", "Redes Cisco", "Packet Tracer", "Active Directory", "DNS", "DHCP"]
+  }
+  </script>
+
+  <!-- Solo CSS propio, sin frameworks -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+  <!-- Favicon SVG + ICO + PNG -->
+  <link rel="icon" href="favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <!-- Logo -->
+      <a href="#inicio" class="logo" aria-label="Ir al inicio">
+        <span class="logo-badge" aria-hidden="true">A</span>
+        Akram<span class="logo-accent">.</span>
+      </a>
+
+      <!-- Menú de navegación -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#inicio" class="nav-link active" aria-current="page">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+        <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+        <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="#formacion" class="nav-link">Formación</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <!-- CTA visible solo en móvil dentro del menú -->
+        <li class="nav-cta-mobile"><a href="#contacto" class="btn btn-primary">Contactar</a></li>
+      </ul>
+      <!-- Overlay para cerrar el menú al tocar fuera (solo móvil) -->
+      <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+      <!-- Acciones: modo oscuro + CTA + hamburguesa -->
+      <div class="nav-actions">
+        <!-- Código abierto en GitHub -->
+        <a href="https://github.com/akamto/Portfolio" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Ver código fuente en GitHub" title="Código abierto en GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+        </a>
+
+        <!-- Botón modo oscuro / claro -->
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar a modo oscuro" title="Cambiar tema">
+          <!-- Icono luna (se muestra en modo claro) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <!-- Icono sol (se muestra en modo oscuro) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <a href="#contacto" class="btn btn-primary nav-cta-desktop">Contactar</a>
+
+        <!-- Botón hamburguesa para móvil -->
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <!-- ================= HERO SECTION ================= -->
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <!-- Formas decorativas tipo CV (solo CSS) -->
+      <div class="hero-blob blob-1" aria-hidden="true"></div>
+      <div class="hero-blob blob-2" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <!-- Texto principal -->
+        <div class="hero-text">
+          <span class="badge"><span class="dot" aria-hidden="true"></span> Disponible para prácticas</span>
+          <h1 id="hero-title">Hola, soy <span class="highlight">Akram Amghibech</span><br />Técnico Informático</h1>
+          <p class="hero-subtitle">
+            Técnico en Sistemas Microinformáticos y Redes, enfocado en la administración de
+            sistemas y el despliegue de redes. Administro equipos y dejo los sistemas
+            funcionando: instalación de SO, administración de ordenadores y redes.
+          </p>
+          <div class="hero-buttons">
+            <a href="#experiencia" class="btn btn-primary">Ver mi experiencia</a>
+            <a href="#contacto" class="btn btn-outline">Contactar</a>
+            <a href="cv-akram-amghibech.pdf" class="btn btn-outline" download>Descargar CV</a>
+          </div>
+          <!-- Datos rápidos de contacto -->
+          <ul class="hero-meta">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Bilbao
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <a href="mailto:akram.amghibech@ikasle.eus?subject=Contacto%20desde%20tu%20portfolio">akram.amghibech@ikasle.eus</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Elemento visual destacado -->
+        <div class="hero-visual">
+          <div class="profile-card">
+            <div class="profile-avatar" aria-hidden="true">AA</div>
+            <p class="profile-name">Akram Amghibech</p>
+            <p class="profile-role">Técnico SMR · Redes</p>
+            <div class="profile-tags">
+              <span>Sistemas</span><span>Redes</span><span>Servidores</span>
+            </div>
+            <div class="profile-info">
+              <div><strong>18</strong><small>Años</small></div>
+              <div><strong>A1</strong><small>Inglés</small></div>
+              <div><strong>SMR</strong><small>En curso</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 2: SOBRE MÍ ================= -->
+    <section id="sobre-mi" class="section" aria-labelledby="sobre-mi-title">
+      <div class="container grid-2 reveal">
+        <div>
+          <span class="section-tag">Sobre mí</span>
+          <h2 class="section-title" id="sobre-mi-title">Administración de sistemas</h2>
+          <p class="section-text">
+            Técnico en Sistemas Microinformáticos y Redes, enfocado en la administración de
+            sistemas y el despliegue de redes. Persona responsable, con
+            capacidad de aprendizaje, actitud positiva y facilidad para el trabajo en equipo.
+            Administro sistemas Windows y Linux, aplico mantenimiento preventivo y
+            documento cada intervención. Busco prácticas o mi primera oportunidad para aportar
+            en entornos tecnológicos reales.
+          </p>
+          <!-- Datos personales -->
+          <ul class="about-list">
+            <li><strong>Edad:</strong> 18 años</li>
+            <li><strong>Nacionalidad:</strong> Español</li>
+            <li><strong>Ubicación:</strong> Bilbao</li>
+            <li><strong>Email:</strong> <a href="mailto:akram.amghibech@ikasle.eus?subject=Contacto%20desde%20tu%20portfolio">akram.amghibech@ikasle.eus</a></li>
+            <li><strong>Idiomas:</strong> Español, Inglés A1 (EOI)</li>
+          </ul>
+          <div class="about-cta">
+            <a href="#contacto" class="btn btn-primary">Hablemos</a>
+            <a href="cv-akram-amghibech.pdf" class="btn btn-outline" download>Descargar CV (PDF)</a>
+          </div>
+        </div>
+        <!-- Servicios que puedo ofrecer -->
+        <div class="about-cards">
+          <article class="card">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <h3>Sistemas Operativos</h3>
+            <p>Instalación, configuración y administración de Windows y Linux.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <h3>Administración y Hardware</h3>
+            <p>Instalación y administración de ordenadores y sistemas.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+            <h3>Redes</h3>
+            <p>Conocimiento de redes, configuración de router y switch.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Trabajo en equipo</h3>
+            <p>Organización, adaptación y aprendizaje rápido en entornos reales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN HABILIDADES (todo en un solo bloque) ================= -->
+    <section id="habilidades" class="section section-alt" aria-labelledby="habilidades-title">
+      <div class="container reveal">
+        <span class="section-tag">Habilidades</span>
+        <h2 class="section-title" id="habilidades-title">Lo que sé hacer</h2>
+        <p class="section-text center">Lo esencial para prácticas: administración de sistemas, redes y trabajo en equipo.</p>
+
+        <!-- Habilidades generales más importantes -->
+        <div class="skills-grid">
+          <article class="card skill-category">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <h3>Sistemas Operativos</h3>
+            <p>Instalación, configuración y administración en entornos reales.</p>
+            <div class="chips">
+              <span>Windows</span><span>Linux</span><span>Administración</span>
+            </div>
+          </article>
+
+          <article class="card skill-category">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+            <h3>Redes y Conectividad</h3>
+            <p>Montaje y configuración de redes locales.</p>
+            <div class="chips">
+              <span>VLANs</span><span>Direccionamiento IP</span><span>Packet Tracer</span>
+            </div>
+          </article>
+
+          <article class="card skill-category">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <h3>Administración de Hardware</h3>
+            <p>Administración y mantenimiento de PCs y sistemas.</p>
+            <div class="chips">
+              <span>Montaje</span><span>Clonación</span><span>Inventario</span>
+            </div>
+          </article>
+
+          <article class="card skill-category">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3>Idiomas y Competencias</h3>
+            <p>Base para trabajar en equipo y seguir aprendiendo.</p>
+            <span class="lang-badge">Inglés · A1 — EOI (titulado)</span>
+            <div class="chips">
+              <span>Trabajo en equipo</span><span>Responsable</span><span>Aprendizaje rápido</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Continuación del mismo bloque: Linux, Windows Server y Cisco -->
+        <div class="tech-grid">
+          <!-- 1. Linux -->
+          <article class="card tech-card">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+            <h3>Linux &amp; Servicios de Sistemas</h3>
+            <p>Administración, red y servicios en Linux.</p>
+
+            <h4 class="tech-sub">Core &amp; Redes</h4>
+            <div class="chips small">
+              <span>SSH</span><span>Firewall</span><span>NAT</span>
+            </div>
+
+            <h4 class="tech-sub">Servicios de Red &amp; Web</h4>
+            <div class="chips small">
+              <span>DNS (bind9)</span><span>DHCP</span><span>HTTP (apache2 / nginx)</span>
+            </div>
+
+            <h4 class="tech-sub">Seguridad &amp; Almacenamiento</h4>
+            <div class="chips small">
+              <span>VPN (openvpn)</span><span>Backups (rsync)</span><span>SSL/TLS</span>
+            </div>
+          </article>
+
+          <!-- 2. Windows Server -->
+          <article class="card tech-card">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+            <h3>Windows Server &amp; Infraestructura</h3>
+            <p>Servicios empresariales esenciales.</p>
+
+            <h4 class="tech-sub">Directorio Activo &amp; Gestión</h4>
+            <div class="chips small">
+              <span>Active Directory DS</span><span>GPOs</span><span>PowerShell</span>
+            </div>
+
+            <h4 class="tech-sub">Red &amp; Conectividad</h4>
+            <div class="chips small">
+              <span>Windows DNS / DHCP</span><span>RRAS / VPN</span><span>SMB / DFS</span>
+            </div>
+
+            <h4 class="tech-sub">Seguridad, Monitorización &amp; Web</h4>
+            <div class="chips small">
+              <span>Firewall</span><span>Windows Server Backup</span><span>IIS</span>
+            </div>
+          </article>
+
+          <!-- 3. Redes Cisco -->
+          <article class="card tech-card">
+            <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3>Redes &amp; Cisco / Packet Tracer</h3>
+            <p>De fundamentos a tecnologías avanzadas.</p>
+
+            <h4 class="tech-sub">Fundamentos &amp; Switching</h4>
+            <div class="chips small">
+              <span>VLANs</span><span>TRUNK</span><span>STP / RSTP</span>
+            </div>
+
+            <h4 class="tech-sub">Enrutamiento</h4>
+            <div class="chips small">
+              <span>Estático</span><span>OSPF</span><span>EIGRP</span>
+            </div>
+
+            <h4 class="tech-sub">Servicios IP &amp; Redundancia</h4>
+            <div class="chips small">
+              <span>DHCP</span><span>NAT / PAT</span><span>HSRP</span>
+            </div>
+
+            <h4 class="tech-sub">Seguridad &amp; Gestión</h4>
+            <div class="chips small">
+              <span>ACLs</span><span>Port Security</span><span>SNMP / Syslog</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 3: EXPERIENCIA / PROYECTOS ================= -->
+    <section id="experiencia" class="section" aria-labelledby="experiencia-title">
+      <div class="container reveal">
+        <span class="section-tag">Experiencia</span>
+        <h2 class="section-title" id="experiencia-title">Experiencia laboral</h2>
+
+        <!-- Timeline -->
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-date"><time datetime="2026-04-27">27/04/2026</time> — <time datetime="2026-05-12">12/05/2026</time> · 2 semanas · IES San Adrian BHI</span>
+              <h3>Becario Técnico Informático</h3>
+              <p>Administración de sistemas en entorno educativo: mantenimiento preventivo de equipos, administración de hardware y software, y gestión de aulas con registro de actuaciones.</p>
+              <div class="chips small"><span>Administración de sistemas</span><span>Mantenimiento preventivo</span><span>Gestión de aulas</span></div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Proyectos de laboratorio: iniciativa técnica más allá de lo básico -->
+        <h3 class="subsection">Proyectos de Laboratorio y Prácticas SMR</h3>
+        <div class="projects-grid">
+          <article class="card project">
+            <h4>Montaje y clonado de PCs</h4>
+            <p>Instalación limpia de Windows/Linux, drivers, particiones y copias de seguridad.</p>
+            <span class="project-tag">Sistemas</span>
+          </article>
+          <article class="card project">
+            <h4>Red local con Packet Tracer</h4>
+            <p>Direccionamiento IP, VLANs básicas y configuración de router y switch.</p>
+            <span class="project-tag">Redes</span>
+          </article>
+          <article class="card project">
+            <h4>Administración de usuarios</h4>
+            <p>Gestión de cuentas, permisos y documentación en entorno real (prácticas).</p>
+            <span class="project-tag">Administración</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MIS PROYECTOS (conectado con GitHub) ================= -->
+    <section id="proyectos" class="section section-alt" aria-labelledby="proyectos-title">
+      <div class="container reveal">
+        <span class="section-tag">Mis proyectos</span>
+        <h2 class="section-title" id="proyectos-title">Proyectos en GitHub</h2>
+        <p class="section-text center">Prácticas de laboratorio del ciclo SMR publicadas en mi GitHub. Código, configuraciones y documentación.</p>
+
+        <!-- TODO: cuando publiques cada práctica, apunta cada tarjeta a su repo (https://github.com/akamto/nombre-repo) -->
+        <div class="projects-grid">
+          <article class="card project">
+            <h4>Administración de sistemas Linux</h4>
+            <p>Scripts y configuraciones: SSH, DNS, DHCP, backups con rsync y servicios web.</p>
+            <a class="project-link" href="https://github.com/akamto?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Ver proyectos de Linux en GitHub">Ver en GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+          <article class="card project">
+            <h4>Redes Cisco / Packet Tracer</h4>
+            <p>Topologías con VLANs, direccionamiento IP y enrutamiento. Archivos .pkt y guías.</p>
+            <a class="project-link" href="https://github.com/akamto?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Ver proyectos de redes en GitHub">Ver en GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+          <article class="card project">
+            <h4>Windows Server y scripts</h4>
+            <p>Alta de usuarios con PowerShell, GPOs documentadas y copias de seguridad.</p>
+            <a class="project-link" href="https://github.com/akamto?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Ver proyectos de Windows Server en GitHub">Ver en GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+        </div>
+
+        <div class="contact-cta">
+          <a class="btn btn-primary" href="https://github.com/akamto?tab=repositories" target="_blank" rel="noopener noreferrer me">Ver todo en GitHub</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/akram-amghibech-tohami-880716360/" target="_blank" rel="noopener noreferrer me">Mi LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FORMACIÓN ================= -->
+    <section id="formacion" class="section" aria-labelledby="formacion-title">
+      <div class="container reveal">
+        <span class="section-tag">Formación</span>
+        <h2 class="section-title" id="formacion-title">Formación académica</h2>
+        <div class="edu-grid">
+          <article class="card edu featured">
+            <span class="edu-status">En curso</span>
+            <h3>CIFP Txurdinaga LHII</h3>
+            <p class="edu-date">2025 — 2027</p>
+            <p>Técnico en Sistemas Microinformáticos y Redes.</p>
+          </article>
+          <article class="card edu">
+            <h3>Escuela Oficial de Idiomas</h3>
+            <p class="edu-date">2024 — 2025</p>
+            <p>Inglés A1 titulado.</p>
+          </article>
+          <article class="card edu">
+            <h3>IES San Adrian BHI</h3>
+            <p class="edu-date">2021 — 2025</p>
+            <p>Educación Secundaria Obligatoria.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 4: CONTACTO (sin formulario, contacto directo) ================= -->
+    <section id="contacto" class="section section-alt" aria-labelledby="contacto-title">
+      <div class="container reveal">
+        <span class="section-tag">Contacto</span>
+        <h2 class="section-title" id="contacto-title">¿Hablamos?</h2>
+        <p class="section-text center">Busco prácticas en empresas de Bilbao y alrededores — administración de sistemas y redes. Escríbeme por email o descárgate mi CV.</p>
+
+        <!-- Tarjetas de contacto directo (funcionan sin backend) -->
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:akram.amghibech@ikasle.eus?subject=Contacto%20desde%20tu%20portfolio">
+            <span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <span><strong>Email</strong><small>akram.amghibech@ikasle.eus</small></span>
+          </a>
+          <a class="contact-item" href="cv-akram-amghibech.pdf" download>
+            <span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+            <span><strong>Currículum</strong><small>Descargar CV en PDF</small></span>
+          </a>
+          <div class="contact-item">
+            <span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><strong>Ubicación</strong><small>Bilbao, España</small></span>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <a class="btn btn-primary" href="mailto:akram.amghibech@ikasle.eus?subject=Quiero%20contactar%20contigo">Enviar email</a>
+          <a class="btn btn-outline" href="cv-akram-amghibech.pdf" download>Descargar CV</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#inicio" class="logo"><span class="logo-badge" aria-hidden="true">A</span> Akram<span class="logo-accent">.</span></a>
+        <p class="footer-desc">Técnico Informático en Bilbao. Administración de sistemas y redes.</p>
+        <!-- Redes sociales con SVG (sin librerías) -->
+        <div class="social">
+          <a href="mailto:akram.amghibech@ikasle.eus" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/akram-amghibech-tohami-880716360/" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a>
+          <a href="https://github.com/akamto" target="_blank" rel="noopener noreferrer me" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Mapa de sitio rápido -->
+      <nav aria-label="Mapa del sitio">
+        <h2 class="footer-heading">Mapa del sitio</h2>
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre Mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#formacion">Formación</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-heading">Contacto</h2>
+        <ul class="footer-links">
+          <li><a href="mailto:akram.amghibech@ikasle.eus">akram.amghibech@ikasle.eus</a></li>
+          <li><a href="cv-akram-amghibech.pdf" download>Descargar CV (PDF)</a></li>
+          <li>Bilbao, España</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Akram Amghibech. Todos los derechos reservados. · Hecho con HTML, CSS y JS.</p>
+    </div>
+  </footer>
+
+  <!-- Botón volver arriba -->
+  <button id="back-top" type="button" aria-label="Volver arriba" title="Volver arriba"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
+
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}.nav-menu{position:static;transform:none;visibility:visible;height:auto;width:auto;flex-direction:row;flex-wrap:wrap;border:0;box-shadow:none;padding:0}.nav-toggle,.theme-toggle,.repo-link,#back-top,.nav-overlay{display:none}</style></noscript>
+
+  <!-- Solo JS puro -->
+  <script src="script.js" defer></script>
+</body>
+</html>

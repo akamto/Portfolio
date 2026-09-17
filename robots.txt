@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akamto.github.io/Portfolio/sitemap.xml

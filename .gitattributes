@@ -1,0 +1,10 @@
+# HTML, CSS y JS con finales de línea consistentes
+* text=auto eol=lf
+
+# Binarios: no tocar
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdf binary
+*.ico binary

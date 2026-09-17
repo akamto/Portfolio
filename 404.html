@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="Página no encontrada — Portfolio de Akram Amghibech." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b4fa4" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220" />
+  <title>Página no encontrada | Akram Amghibech</title>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/Portfolio/style.css" />
+  <link rel="manifest" href="/Portfolio/site.webmanifest" />
+  <link rel="icon" href="/Portfolio/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/Portfolio/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Portfolio/assets/apple-touch-icon.png" />
+  <style>.notfound{min-height:70vh;display:grid;place-items:center;text-align:center;padding:6rem 1rem 3rem}.notfound h1{font-size:clamp(3rem,10vw,6rem);color:var(--azul-oscuro);line-height:1}.notfound p{color:var(--texto-suave);margin:1rem 0 1.5rem}.notfound .btn{margin:.3rem}</style>
+</head>
+<body>
+  <main class="notfound container">
+    <div>
+      <h1>404</h1>
+      <h2>Página no encontrada</h2>
+      <p>La dirección que buscas no existe o ha cambiado.</p>
+      <a class="btn btn-primary" href="/Portfolio/">Volver al inicio</a>
+      <a class="btn btn-outline" href="/Portfolio/#contacto" style="margin-top:.6rem">Ir a contacto</a>
+    </div>
+  </main>
+</body>
+</html>
