@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+<!-- 404.html: página de error de GitHub Pages. Usa rutas absolutas /Portfolio/ porque puede renderizarse desde cualquier subruta inexistente -->
 <html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- noindex: la página de error no debe aparecer en Google -->
   <meta name="robots" content="noindex" />
   <meta name="description" content="Página no encontrada — Portfolio de Akram Amghibech." />
+  <!-- color-scheme + theme-color: adapta la barra del navegador al modo claro/oscuro -->
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b4fa4" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220" />
   <title>Página no encontrada | Akram Amghibech</title>
+  <!-- Lee el tema guardado ANTES de pintar para evitar flash blanco/negro -->
   <script>
     (function () {
       try {
@@ -21,15 +25,18 @@
       } catch (e) {}
     })();
   </script>
+  <!-- CSS principal + manifest + favicons con ruta absoluta (relativa fallaría en /Portfolio/ruta-inexistente) -->
   <link rel="stylesheet" href="/Portfolio/style.css" />
   <link rel="manifest" href="/Portfolio/site.webmanifest" />
   <link rel="icon" href="/Portfolio/favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/Portfolio/assets/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Portfolio/assets/apple-touch-icon.png" />
+  <!-- Estilos mínimos propios del 404: centra el mensaje sin depender de más CSS -->
   <style>.notfound{min-height:70vh;display:grid;place-items:center;text-align:center;padding:6rem 1rem 3rem}.notfound h1{font-size:clamp(3rem,10vw,6rem);color:var(--azul-oscuro);line-height:1}.notfound p{color:var(--texto-suave);margin:1rem 0 1.5rem}.notfound .btn{margin:.3rem}</style>
 </head>
 <body>
+  <!-- Contenido del error: mensaje + vuelta al inicio / contacto -->
   <main class="notfound container">
     <div>
       <h1>404</h1>

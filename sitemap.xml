@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- sitemap.xml: lista de URLs para Google. Al ser one-page solo hay la principal -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <!-- URL canónica del portfolio en GitHub Pages -->
     <loc>https://akamto.github.io/Portfolio/</loc>
+    <!-- Última actualización del contenido -->
     <lastmod>2026-09-17</lastmod>
+    <!-- Frecuencia estimada de cambios (portfolio: mensual) -->
     <changefreq>monthly</changefreq>
+    <!-- Prioridad máxima: es la única página -->
     <priority>1.0</priority>
   </url>
 </urlset>

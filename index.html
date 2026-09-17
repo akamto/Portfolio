@@ -164,9 +164,10 @@
           </ul>
         </div>
 
-        <!-- Elemento visual destacado -->
+        <!-- Tarjeta de perfil: foto real (assets/foto-perfil.png, 84px, fetchpriority high por estar en el hero) + datos rápidos -->
         <div class="hero-visual">
           <div class="profile-card">
+            <!-- Foto de perfil: alt descriptivo para lectores de pantalla, width/height evitan salto de layout (CLS) -->
             <img class="profile-avatar" src="assets/foto-perfil.png" alt="Foto de Akram Amghibech" width="84" height="84" fetchpriority="high" />
             <p class="profile-name">Akram Amghibech</p>
             <p class="profile-role">Técnico SMR · Redes</p>
@@ -538,16 +539,18 @@
       </div>
     </div>
     <div class="footer-bottom">
+      <!-- Año automático: JS (initYear) lo actualiza; 2026 es el fallback sin JS -->
       <p>© <span id="year">2026</span> Akram Amghibech. Todos los derechos reservados. · Hecho con HTML, CSS y JS.</p>
     </div>
   </footer>
 
-  <!-- Botón volver arriba -->
+  <!-- Botón volver arriba: oculto hasta 600px de scroll (lo gestiona initHeader en script.js) -->
   <button id="back-top" type="button" aria-label="Volver arriba" title="Volver arriba"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
 
+  <!-- Sin JS: muestra el contenido (.reveal visible), menú en línea y oculta controles que dependen de JS -->
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}.nav-menu{position:static;transform:none;visibility:visible;height:auto;width:auto;flex-direction:row;flex-wrap:wrap;border:0;box-shadow:none;padding:0}.nav-toggle,.theme-toggle,.repo-link,#back-top,.nav-overlay{display:none}</style></noscript>
 
-  <!-- Solo JS puro -->
+  <!-- Solo JS puro, defer = se ejecuta tras parsear el HTML sin bloquear el render -->
   <script src="script.js" defer></script>
 </body>
 </html>

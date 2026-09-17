@@ -26,7 +26,7 @@ var ASSETS = [
   './assets/icon-192.png',
   './assets/icon-512.png',
   './assets/maskable-512.png',
-  './assets/foto-perfil.png',
+  './assets/foto-perfil.png', // foto del hero (16 KB: entra en precache sin lastrar el install)
   './assets/og-cover.png'
 ];
 

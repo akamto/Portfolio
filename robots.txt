@@ -1,4 +1,8 @@
+# robots.txt: indica a Google/Bing qué pueden rastrear
+# User-agent * = aplica a todos los rastreadores
 User-agent: *
+# Allow / = permite toda la web (portfolio público)
 Allow: /
 
+# Ubicación del sitemap para que los buscadores indexen la URL canónica
 Sitemap: https://akamto.github.io/Portfolio/sitemap.xml
