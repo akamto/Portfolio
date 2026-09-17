@@ -338,6 +338,7 @@ ul { list-style: none; }
   background: linear-gradient(135deg, var(--azul-oscuro), var(--acento));
   border-radius: 50%;
 }
+img.profile-avatar { object-fit: cover; display: block; border: 2px solid var(--borde); }
 .profile-role { color: var(--acento); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; }
 .profile-name { font-size: 1.25rem; font-weight: 800; line-height: 1.2; }
 .profile-tags { display: flex; gap: 0.4rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }

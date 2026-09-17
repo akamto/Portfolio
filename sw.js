@@ -4,7 +4,7 @@
    offline-first, seguro para subruta /Portfolio/.
    ===================================================== */
 
-var CACHE = 'portfolio-v1';
+var CACHE = 'portfolio-v2';
 // IMPORTANTE: sube la versión (v1, v2...) cada vez que cambies
 // index.html, style.css, script.js o iconos, para que Pages
 // invalide la caché vieja en los visitantes recurrentes.
@@ -26,6 +26,7 @@ var ASSETS = [
   './assets/icon-192.png',
   './assets/icon-512.png',
   './assets/maskable-512.png',
+  './assets/foto-perfil.png',
   './assets/og-cover.png'
 ];
 

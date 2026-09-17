@@ -20,7 +20,7 @@ Administración de sistemas Windows y Linux, redes Cisco. Busco prácticas en Bi
 - Responsive real: móvil ≤860px con menú hamburguesa + overlay, tablet ≥861px, desktop ≥1024px.
 - Accesible: skip-link, ARIA (`aria-current`, `aria-hidden`/`inert` en menú), foco visible, contraste AA, `prefers-reduced-motion`, funciona sin JS (`<noscript>`).
 - SEO: canonical, Open Graph / Twitter Card con dimensiones, `sitemap.xml`, `robots.txt`, JSON-LD `Person`.
-- PWA lista: `site.webmanifest` con iconos 32/180/192/512 + maskable 512, `screenshots` wide + narrow, `shortcuts` y `categories`; offline con `sw.js` (JS puro, caché `portfolio-v1` con stale-while-revalidate).
+- PWA lista: `site.webmanifest` con iconos 32/180/192/512 + maskable 512, `screenshots` wide + narrow, `shortcuts` y `categories`; offline con `sw.js` (JS puro, caché `portfolio-v2` con stale-while-revalidate).
 - Favicon en 3 formatos: `favicon.ico` + `favicon.svg` + PNG, con `color-scheme` claro/oscuro.
 - Contacto directo sin backend: `mailto` + CV descargable.
 - Portada Open Graph `assets/og-cover.png` (1200x630 real con la marca).
@@ -58,6 +58,7 @@ Portfolio/
 │   ├── icon-192.png        # PWA 192
 │   ├── icon-512.png        # PWA 512
 │   ├── maskable-512.png    # PWA maskable 512
+│   ├── foto-perfil.png     # foto perfil hero 84px
 │   └── og-cover.png        # imagen Open Graph 1200x630
 ├── 404.html
 ├── robots.txt
