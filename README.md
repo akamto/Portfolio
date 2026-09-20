@@ -16,7 +16,7 @@ Administración de sistemas Windows y Linux, redes Cisco. Busco prácticas en Bi
 ## Contacto
 
 - Email: akram.amghibech@ikasle.eus
-- LinkedIn: https://www.linkedin.com/in/akram-amghibech-tohami-880716360/
+- LinkedIn: https://www.linkedin.com/in/akamto/
 - GitHub: https://github.com/akamto
 
 ## Licencia

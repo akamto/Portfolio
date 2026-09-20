@@ -730,21 +730,6 @@ img.profile-avatar {
   padding-top: 0.5rem;
 }
 
-.lang-badge {
-  display: inline-block;
-  align-self: flex-start;
-  font-size: 0.82rem;
-  font-weight: 800;
-  color: var(--acento);
-  background: rgba(10, 107, 136, 0.14);
-  background: color-mix(in srgb, var(--acento) 14%, transparent);
-  border: 1px solid var(--acento);
-  border-color: color-mix(in srgb, var(--acento) 40%, transparent);
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  margin-bottom: 0.8rem;
-}
-
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -892,6 +877,12 @@ img.profile-avatar {
 .projects-grid {
   display: grid;
   gap: 1rem;
+  justify-items: center;
+}
+
+.projects-grid .project {
+  width: min(100%, 42rem);
+  text-align: center;
 }
 
 .project-tag {
@@ -1151,6 +1142,21 @@ a.contact-item:hover {
   }
 }
 
+/* Tablet 861-1023px: 7 enlaces + acciones no caben con gap 1.4rem */
+@media (min-width: 861px) and (max-width: 1023px) {
+  .nav-menu {
+    gap: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .nav-actions .btn {
+    padding: 0.7rem 1.1rem;
+  }
+}
+
 /* Desktop grande: 3 columnas para grids densos (en tablet iban apretados) */
 @media (min-width: 1024px) {
   .tech-grid {
@@ -1169,6 +1175,12 @@ a.contact-item:hover {
   .contact-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Grid con una sola tarjeta (ej. 1 proyecto): una columna para que
+   no caiga en la primera de 2-3 y se quede a la izquierda */
+.projects-grid:has(> :only-child) {
+  grid-template-columns: 1fr;
 }
 
 /* Overlay para cerrar el menú móvil al tocar fuera */
@@ -1200,6 +1212,11 @@ a.contact-item:hover {
   .nav-cta-mobile {
     display: block;
     margin-top: 0.6rem;
+  }
+
+  .nav-cta-mobile .btn {
+    display: block;
+    text-align: center;
   }
 
   .nav-menu {
