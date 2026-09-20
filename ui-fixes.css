@@ -1,0 +1,89 @@
+/* UI fixes and responsive polish */
+
+/* Keep keyboard focus visible without adding rings to mouse users. */
+:where(a, button):focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+}
+
+/* The fixed header must not cover anchored content. */
+main {
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
+/* Keep long labels and contact addresses inside their cards. */
+.nav-link,
+.btn,
+.card,
+.timeline-card,
+.edu,
+.project,
+.contact-item {
+  overflow-wrap: anywhere;
+}
+
+/* Make cards stable when one item has more content than the others. */
+.skills-grid,
+.tech-grid,
+.projects-grid,
+.edu-grid,
+.contact-grid {
+  align-items: stretch;
+}
+
+/* Ensure the mobile menu is above the page and its overlay is below the menu. */
+@media (max-width: 860px) {
+  .header,
+  .nav {
+    isolation: isolate;
+  }
+
+  .nav-menu {
+    z-index: 2;
+  }
+
+  .nav-overlay {
+    z-index: 1;
+  }
+
+  .nav-toggle,
+  .theme-toggle,
+  .repo-link {
+    flex: 0 0 auto;
+  }
+
+  .hero-buttons .btn,
+  .about-cta .btn,
+  .contact-cta .btn {
+    min-height: 46px;
+  }
+}
+
+/* Avoid hover movement/animations for touch users and reduced-motion users. */
+@media (hover: none) {
+  .card:hover,
+  .profile-card:hover,
+  a.contact-item:hover,
+  .btn:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
